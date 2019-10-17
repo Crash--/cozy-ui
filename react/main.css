@@ -13799,11 +13799,11 @@ body {
   margin-top: 3rem;
 }
 
-.StackIcon-wrapper--kilDD {
+.IconStack-wrapper--10dhG {
   position: relative;
   display: inline-block;
 }
-.StackIcon-foregroundIcon--19APK {
+.IconStack-foregroundIcon--ZvY-t {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -29277,5 +29277,31 @@ body {
   .SmallAppItem--1Ple5 {
     flex-basis: calc(100% - 0.75rem);
   }
+}
+
+.gridItem-container--387sO {
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-header--3WSyw {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(0,0,0,0.3);
+}
+.modal-footer--1p4l0 {
+  padding: 0.5rem;
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.06);
 }
 
