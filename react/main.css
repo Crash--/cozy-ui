@@ -31572,8 +31572,8 @@ body {
   border-left: 1px var(--coolGrey) dashed;
   position: absolute;
   margin-left: 20px;
-  top: 35px;
-  bottom: -15px;
+  top: 34px;
+  bottom: -1rem;
 }
 .HistoryRowMedia--2jgYN:last-child::before {
   border: 0;
