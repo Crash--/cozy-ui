@@ -13166,11 +13166,21 @@ body {
   position: relative;
   display: inline-block;
 }
-.IconStack-foregroundIcon--ZvY-t {
+.IconStack-foregroundIcon-center--1Jel_ {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.IconStack-foregroundIcon-bottom-right--1s3VH {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @-moz-keyframes spin--3NpSD {
