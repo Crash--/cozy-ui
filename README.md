@@ -17,7 +17,7 @@ Check the [styleguide](https://docs.cozy.io/cozy-ui/styleguide) to see all the v
 
 ## React components
 
-Check out [UI components](https://docs.cozy.io/cozy-ui/react/) to see how to use ready made (p)React components.
+Check out [UI components](https://docs.cozy.io/cozy-ui/react/) to see how to use ready made React components.
 
 ## Usage
 
@@ -38,7 +38,7 @@ import 'cozy-ui/transpiled/react/stylesheet.css'
 <Button />
 ```
 
-You're now ready to use [Cozy UI's (p)React components](https://docs.cozy.io/cozy-ui/react/)
+You're now ready to use [Cozy UI's React components](https://docs.cozy.io/cozy-ui/react/)
 
 ### Utility classes
 
@@ -60,30 +60,79 @@ The entire library is also available as a good ol’ CSS library. You can simply
 
 ## Develop on Cozy UI
 
-If you want to customize or improve a Cozy UI Component, you need to clone a local version of the library, and declare it as a local symlink with `yarn link`.
+If you want to develop inside cozy-ui, you need a local version cozy-ui.
 
-```
+```bash
 git clone git@github.com:cozy/cozy-ui.git
+```
+
+### Develop inside the styleguidist
+
+It is convenient when modifying a component to use the styleguide site.
+
+```bash
+yarn watch:doc # Run the styleguide in watch mode
+```
+
+### Develop inside an app
+
+Sometimes, you want to develop on a component, from the context of an app.
+Then you need to link cozy-ui with `yarn link`.
+
+```bash
 cd cozy-ui
 yarn link
+yarn watch # Launch transpilation
 ```
 
-Then in your application folder, you can link to your local Cozy UI
+Then in your application folder, you can link to your local Cozy UI.
+You can use [rlink](https://gist.github.com/ptbrowne/add609bdcf4396d32072acc4674fff23)
+instead of `yarn link`. It will prevent common build problems due
+to module resolution inside symlinked folders.
 
-```
-yarn link cozy-ui
+```bash
+cd my-app
+rlink cozy-ui # Prefer rlink to yarn link
 yarn watch
 ```
 
-All your modification in your local Cozy UI will now be visible in your application!
+All your modifications in your local Cozy UI will now be visible in your application!
 
 When sending a PR, if your changes have graphic impacts, it is useful for the reviewers if
 you have deployed a version of the styleguidist containing your changes to your repository.
 
-```
+```bash
 yarn build:doc:react
 yarn deploy:doc --repo git@github.com:USERNAME/cozy-ui.git
 ```
+
+## Unit testing
+
+Be aware that snapshots in unit tests use the transpilated version of cozy-ui. Therefore if you make changes and need to update the snapshots, you need to transpile first.
+
+```bash
+yarn transpile && yarn test -u
+```
+
+## UI regression testing
+
+Components in `cozy-ui` are showcased with [React Styleguidist][]. To prevent UI regressions,
+for each PR, each component is screenshotted and compared to the master version to find any
+regression (thanks [Argos][] !).
+
+If your app uses [React Styleguidist][], `cozy-ui` provides `rsg-screenshots`, a CLI tool to take
+screenshots of your components (uses Puppeteer under the hood).
+
+```bash
+yarn add cozy-ui
+# The rsg-screenshots binary is now installed
+yarn build:doc:react # Build our styleguide, the output directory is docs/react
+rsg-screenshots --screenshot-dir screenshots/ --styleguide-dir docs/react
+# Each component in the styleguide will be screenshotted and saved inside the
+screenshots/ directory
+```
+
+See our [travis configuration](./travis.yml) for more information.
 
 ## License
 
@@ -107,4 +156,6 @@ You can reach the Cozy Community by:
 * Posting issues on the [Github repos](https://github.com/cozy/)
 * Mentioning us on [Twitter](https://twitter.com/cozycloud)
 
-[stylus]: http://stylus-lang.com/
+[React Styleguidist]: https://react-styleguidist.js.org/
+
+[Argos]: https://github.com/argos-ci/argos
