@@ -19843,17 +19843,6 @@ html {
 @media (max-width: 48rem) {
 }
 
-.Modal__back--qxUn_ {
-  cursor: pointer;
-  margin-right: 0.5rem;
-  margin-left: -0.25rem;
-  font-size: 1.5rem;
-  line-height: 0;
-  margin-bottom: -1rem;
-  position: relative;
-  top: -0.5rem;
-}
-
 .media--cSJMp {
   display: flex;
   align-items: center;
@@ -19871,6 +19860,17 @@ html {
 .img--3SHpG {
   line-height: 0;
   flex: 0 0 auto;
+}
+
+.Modal__back--qxUn_ {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-left: -0.25rem;
+  font-size: 1.5rem;
+  line-height: 0;
+  margin-bottom: -1rem;
+  position: relative;
+  top: -0.5rem;
 }
 
 .Hero--14z7_ {
@@ -26131,7 +26131,7 @@ html {
   .Tile-title--3gbq- {
     height: 1rem;
     font-weight: normal;
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
   }
   .Tile-title--3gbq-,
   .Tile-developer--2GOfB,
@@ -26156,14 +26156,6 @@ html {
   padding: 0 0.5em;
 }
 
-.Sections__subtitle--1rLpT {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-.Sections__subsubtitle--toQaF {
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
 .Sections__section--2onYy {
   margin-bottom: 4rem;
 }
@@ -30290,6 +30282,10 @@ html {
   transform: translate(0);
 }
 .upload-queue-header--c9Vf2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 2rem;
   background-color: var(--defaultBackgroundColor);
   font-weight: bold;
   margin: 0;
@@ -30299,15 +30295,6 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.upload-queue-header--c9Vf2 .btn-close--2zN0K {
-  border: 0;
-  background: 0;
-  margin: 0;
-  padding: 0.4rem 0 0.4rem 0.8rem;
-  color: var(--dodgerBlue);
-  text-transform: uppercase;
-  font-size: 0.8rem;
 }
 progress.upload-queue-progress--1CmN- {
   -webkit-appearance: none;
@@ -30362,7 +30349,7 @@ progress.upload-queue-progress--1CmN- {
   .upload-queue-header--c9Vf2 {
     background: 0;
     text-transform: uppercase;
-    padding: 0;
+    padding: 0.5rem;
   }
   .upload-queue-content--3MPHo {
     display: none;
